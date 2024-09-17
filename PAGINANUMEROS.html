@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con 2 números</title>
+    <script type="text/javascript">
+        function realizarOperaciones() {
+            // Obtener los valores de los dos números ingresados por el usuario
+            var numero1 = parseFloat(document.getElementById("numero1").value);
+            var numero2 = parseFloat(document.getElementById("numero2").value);
+
+            // Verificar si los valores ingresados son válidos
+            if (isNaN(numero1) || isNaN(numero2)) {
+                alert("Por favor, ingrese valores numéricos válidos.");
+                return;
+            }
+
+            // Bucle de 5 iteraciones para realizar las operaciones
+            for (var i = 1; i <= 5; i++) {
+                switch (i) {
+                    case 1:
+                        // Suma de los dos números
+                        var suma = numero1 + numero2;
+                        alert("Iteración 1: La suma de " + numero1 + " y " + numero2 + " es: " + suma);
+                        break;
+                    case 2:
+                        // Resta de los dos números
+                        var resta = numero1 - numero2;
+                        alert("Iteración 2: La resta de " + numero1 + " y " + numero2 + " es: " + resta);
+                        break;
+                    case 3:
+                        // Multiplicación de los dos números
+                        var multiplicacion = numero1 * numero2;
+                        alert("Iteración 3: La multiplicación de " + numero1 + " y " + numero2 + " es: " + multiplicacion);
+                        break;
+                    case 4:
+                        // División de los dos números (verificación de división por cero)
+                        if (numero2 !== 0) {
+                            var division = numero1 / numero2;
+                            alert("Iteración 4: La división de " + numero1 + " entre " + numero2 + " es: " + division);
+                        } else {
+                            alert("Iteración 4: No se puede dividir por cero.");
+                        }
+                        break;
+                    case 5:
+                        // Módulo de los dos números (verificación de división por cero)
+                        if (numero2 !== 0) {
+                            var modulo = numero1 % numero2;
+                            alert("Iteración 5: El módulo de " + numero1 + " y " + numero2 + " es: " + modulo);
+                        } else {
+                            alert("Iteración 5: No se puede calcular el módulo con cero.");
+                        }
+                        break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Operaciones con dos números</h1>
+    <form>
+        <label for="numero1">Ingrese el primer número:</label>
+        <input type="text" id="numero1" name="numero1"><br><br>
+        <label for="numero2">Ingrese el segundo número:</label>
+        <input type="text" id="numero2" name="numero2"><br><br>
+        <input type="button" value="Realizar Operaciones" onclick="realizarOperaciones()">
+    </form>
+</body>
+</html>
